@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'paperclip'
 gem 'bootstrap'
 gem 'jquery-rails'
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '3.4.1'
 gem 'bootsnap', '>= 1.1.0', require: false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
