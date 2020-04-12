@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @movie.description %>
+</p>
+
+<p>
+  <strong>Fecha de Presentacion:</strong>
+  <%= @movie.date_presentation %>
+</p>
+
+
+<form method="post" action="/rentals">
+  <%= tag(:input, :type => "hidden", :name => :client_id, :value => current_client.id) %>
+  <%= tag(:input, :type => "hidden", :name => :movie_id, :value => @movie.id) %>
+  <input type="submit" value="Rent Movie">
+</form>
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

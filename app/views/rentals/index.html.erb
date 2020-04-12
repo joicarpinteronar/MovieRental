@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Peliculas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Pelicula</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rentals.each do |rental| %>
+      <tr>
+        <td><%= link_to rental.movie.title, movie_path(rental.movie.id) %></td>
+        <td><%= rental.client %></td>
+        <td><%= rental.movie %></td>
+        <td><%= rental.status %></td>
+        <td>
+          <form method="patch" action="/rentals/:id">
+            <%= tag(:input, :type => "hidden", :name => :client_id, :value => current_client.id) %>
+            <%= tag(:input, :type => "hidden", :name => :movie_id, :value => rental.movie.id) %>
+            <%= tag(:input, :type => "hidden", :name => :rental_id, :value => rental.id) %>
+            <input type="submit" value="Sacar del Stock">
+          </form>
+        </td>
+        <td><%= link_to 'Show', rental %></td>
+        <td><%= link_to 'Edit', edit_rental_path(rental) %></td>
+        <td><%= link_to 'Destroy', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rental', new_rental_path %>

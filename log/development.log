@@ -1,0 +1,904 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (93.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (111.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20200412001539)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "date_presentation" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200412001539"]]
+  [1m[35m (92.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-12 00:16:03.291280"], ["updated_at", "2020-04-12 00:16:03.291280"]]
+  [1m[35m (98.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateClients (20200412002523)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "clients" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "identification" integer, "email" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200412002523"]]
+  [1m[35m (188.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddClientIdToMovies (20200412002734)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "movies" ADD "client_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200412002734"]]
+  [1m[35m (143.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMovies (20200412003941)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMovies (20200412003941)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMovies (20200412003941)
+Started GET "/" for ::1 at 2020-04-11 19:51:01 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMovies (20200412003941)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMovies (20200412003941)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMovies (20200412003941)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMovies (20200412003941)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMovies (20200412003941)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAttachmentImageToMovies (20200412010326)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "movies" ADD "image_file_name" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "movies" ADD "image_content_type" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "movies" ADD "image_file_size" bigint[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "movies" ADD "image_updated_at" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200412010326"]]
+  [1m[35m (163.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-04-11 20:03:59 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 627ms (Views: 599.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2020-04-11 20:04:10 -0500
+Processing by MoviesController#new as HTML
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_client' for #<MoviesController:0x0000000004a59110>):
+  
+app/controllers/movies_controller.rb:17:in `new'
+Started GET "/" for ::1 at 2020-04-11 20:07:08 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 188ms (Views: 169.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/new" for ::1 at 2020-04-11 20:07:11 -0500
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (378.0ms)
+  Rendered movies/new.html.erb within layouts/application (379.3ms)
+Completed 500 Internal Server Error in 396ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00000000046ca990>:0x00007f9228136890>):
+    27:   </div>
+    28: 
+    29:   <div class="field">
+    30:     <%= f.label :image %>
+    31:     <%= f.file_field :image %>
+    32:   </div>
+    33: 
+  
+app/views/movies/_form.html.erb:30:in `block in _app_views_movies__form_html_erb___2079364977096436429_70132857185260'
+app/views/movies/_form.html.erb:1:in `_app_views_movies__form_html_erb___2079364977096436429_70132857185260'
+app/views/movies/new.html.erb:3:in `_app_views_movies_new_html_erb___293667355650939185_70132857157960'
+Started GET "/" for ::1 at 2020-04-11 20:10:54 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 203ms (Views: 181.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2020-04-11 20:10:56 -0500
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (112.6ms)
+  Rendered movies/new.html.erb within layouts/application (113.5ms)
+Completed 200 OK in 143ms (Views: 128.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/movies" for ::1 at 2020-04-11 20:18:36 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pZDPj4OFdrrPUOWnNldfKv/3L73yDDv1cFHjUjqkWPdLByhR0FdtpjjnjEmqdn+GpYkNMyvd2Th5AOYYa9uNjg==", "movie"=>{"title"=>"Harry Potter", "description"=>"Pelicula de un Mago", "date_presentation(1i)"=>"2020", "date_presentation(2i)"=>"4", "date_presentation(3i)"=>"20", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f78900b60e8 @tempfile=#<Tempfile:/tmp/RackMultipart20200411-30042-gq4e0r.jpg>, @original_filename="The_Maze_Runner_poster.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"movie[image]\"; filename=\"The_Maze_Runner_poster.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Movie"}
+[paperclip] Trying to link /tmp/RackMultipart20200411-30042-gq4e0r.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1rxsdrj.jpg
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1rxsdrj.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-236g1p.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-236g1p.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1rxsdrj.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1rxsdrj.jpg[0]'
+Command :: convert '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1rxsdrj.jpg[0]' -auto-orient -resize "x600" -crop "400x600+2+0" +repage '/tmp/838ac67eaf1f0478914c9892914b3c2e20200411-30042-1vvu7p8'
+[paperclip] Trying to link /tmp/838ac67eaf1f0478914c9892914b3c2e20200411-30042-1vvu7p8 to /tmp/1aa3ccfee4630b21ab57d4bab08e666120200411-30042-iatycf
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1rxsdrj.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-xn0286.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-xn0286.jpg'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (3.6ms)
+  Rendered movies/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 818ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for ::1 at 2020-04-11 20:19:10 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients" for ::1 at 2020-04-11 20:19:20 -0500
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  Rendered clients/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/clients/new" for ::1 at 2020-04-11 20:19:23 -0500
+Processing by ClientsController#new as HTML
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (102.4ms)
+  Rendered clients/new.html.erb within layouts/application (103.3ms)
+Completed 200 OK in 133ms (Views: 120.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/clients" for ::1 at 2020-04-11 20:19:43 -0500
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vE6Wr3z1s5LfPvTAK2lY9wwSVqoS6dcWq6PFCKjq3nSGNXX1qdbTsf/GZY7x22yxMv313693t1PZ1TkS3DF/ow==", "client"=>{"identification"=>"123456", "email"=>"ivan@gmail.com", "name"=>"ivan"}, "commit"=>"Create Client"}
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "clients" ("identification", "email", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["identification", 123456], ["email", "ivan@gmail.com"], ["name", "ivan"], ["created_at", "2020-04-12 01:19:43.632401"], ["updated_at", "2020-04-12 01:19:43.632401"]]
+  [1m[35m (271.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/clients/1
+Completed 302 Found in 282ms (ActiveRecord: 275.1ms)
+
+
+Started GET "/clients/1" for ::1 at 2020-04-11 20:19:43 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 51ms (Views: 36.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients" for ::1 at 2020-04-11 20:19:53 -0500
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  Rendered clients/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 20:20:01 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/new" for ::1 at 2020-04-11 20:20:03 -0500
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (7.0ms)
+  Rendered movies/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for ::1 at 2020-04-11 20:20:23 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y8pOn2YPwaCW9ULAN1VDQH2WxXzaPSObB2DGc9VUbrolXalBNd3avGFCKy6rdGPsJ+jn8gPswVYOMcM5hCu7ww==", "movie"=>{"title"=>"Harry Potter", "description"=>"Pelicula de Magos", "date_presentation(1i)"=>"2020", "date_presentation(2i)"=>"4", "date_presentation(3i)"=>"19", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f78955d72e8 @tempfile=#<Tempfile:/tmp/RackMultipart20200411-30042-wrfbsr.jpg>, @original_filename="The_Maze_Runner_poster.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"movie[image]\"; filename=\"The_Maze_Runner_poster.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Movie"}
+[paperclip] Trying to link /tmp/RackMultipart20200411-30042-wrfbsr.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1r9ler6.jpg
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1r9ler6.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-c4jzjb.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-c4jzjb.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1r9ler6.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1r9ler6.jpg[0]'
+Command :: convert '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1r9ler6.jpg[0]' -auto-orient -resize "x600" -crop "400x600+2+0" +repage '/tmp/2c3e8a5ace12638f0b1726031a13cf0a20200411-30042-n214aa'
+[paperclip] Trying to link /tmp/2c3e8a5ace12638f0b1726031a13cf0a20200411-30042-n214aa to /tmp/9342f5665b52f284755e6149eba7741f20200411-30042-77r17m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1r9ler6.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1vsvsfm.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30042-1vsvsfm.jpg'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (4.4ms)
+  Rendered movies/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 83ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for ::1 at 2020-04-11 20:21:01 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRentals (20200412013337)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "rentals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "client_id" integer, "movie_id" integer, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_ede3db960f"
+FOREIGN KEY ("client_id")
+  REFERENCES "clients" ("id")
+, CONSTRAINT "fk_rails_2e53b99875"
+FOREIGN KEY ("movie_id")
+  REFERENCES "movies" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_rentals_on_client_id" ON "rentals" ("client_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rentals_on_client_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rentals_on_client_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_rentals_on_movie_id" ON "rentals" ("movie_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200412013337"]]
+  [1m[35m (193.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rentals_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rentals_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rentals_on_client_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rentals_on_client_id' AND type='index'
+[0m
+Started GET "/movies" for ::1 at 2020-04-11 20:34:20 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 253ms (Views: 238.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/movies" for ::1 at 2020-04-11 20:34:30 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QX1B5qDQ5xSfTTgI5/FE8DUwzloFzMaW4VMjPtIqJV1+GmKxDruxaiwr0vGiD4ndkUsuAc4i9NHmiGFG38vFow==", "movie"=>{"title"=>"Harry Potter", "description"=>"Pelicula de Magos", "date_presentation(1i)"=>"2020", "date_presentation(2i)"=>"4", "date_presentation(3i)"=>"19", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f9940f0f7e0 @tempfile=#<Tempfile:/tmp/RackMultipart20200411-30664-a1lnk9.jpg>, @original_filename="The_Maze_Runner_poster.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"movie[image]\"; filename=\"The_Maze_Runner_poster.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Movie"}
+[paperclip] Trying to link /tmp/RackMultipart20200411-30664-a1lnk9.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-1dxdgty.jpg
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-1dxdgty.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-1rx69hc.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-1rx69hc.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-1dxdgty.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-1dxdgty.jpg[0]'
+Command :: convert '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-1dxdgty.jpg[0]' -auto-orient -resize "x600" -crop "400x600+2+0" +repage '/tmp/b0097f0198128410628c34f587611cd120200411-30664-c5xchg'
+[paperclip] Trying to link /tmp/b0097f0198128410628c34f587611cd120200411-30664-c5xchg to /tmp/9406f6254edbfe1bbabf390a3de485b620200411-30664-1tkiht9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-1dxdgty.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-12fwekx.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-12fwekx.jpg'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (10.0ms)
+  Rendered movies/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 104ms (Views: 29.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/movies" for ::1 at 2020-04-11 20:34:55 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5jUh93e7m/nF8qxTNEBRloGuxCG45a+sYDXyvTeinNbZUgKg2dDNh3aURqpxvpy7JdUkenMLnetn7rDFOkN8KA==", "movie"=>{"title"=>"Harry Potter", "description"=>"Pelicula de Magos", "date_presentation(1i)"=>"2020", "date_presentation(2i)"=>"4", "date_presentation(3i)"=>"19", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f993c05d278 @tempfile=#<Tempfile:/tmp/RackMultipart20200411-30664-1oa0lgb.jpg>, @original_filename="The_Maze_Runner_poster.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"movie[image]\"; filename=\"The_Maze_Runner_poster.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Movie"}
+[paperclip] Trying to link /tmp/RackMultipart20200411-30664-1oa0lgb.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-nueist.jpg
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-nueist.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-1blc3k8.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-1blc3k8.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-nueist.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-nueist.jpg[0]'
+Command :: convert '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-nueist.jpg[0]' -auto-orient -resize "x600" -crop "400x600+2+0" +repage '/tmp/6ad7f04171ddb8ea75fdd6f26f90d9aa20200411-30664-ky508w'
+[paperclip] Trying to link /tmp/6ad7f04171ddb8ea75fdd6f26f90d9aa20200411-30664-ky508w to /tmp/968a54d5a6b30fcf975ca69a9009330420200411-30664-wzkfa1
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-nueist.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-xv2zw2.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30664-xv2zw2.jpg'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (3.0ms)
+  Rendered movies/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 84ms (Views: 23.2ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rentals_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rentals_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rentals_on_client_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rentals_on_client_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RemoveClientFromMovies (20200412014058)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "amovies" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "description" text DEFAULT NULL, "date_presentation" date DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "client_id" integer DEFAULT NULL, "image_file_name" varchar DEFAULT NULL, "image_content_type" varchar DEFAULT NULL, "image_file_size" integer(8) DEFAULT NULL, "image_updated_at" datetime DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "amovies" ("id","title","description","date_presentation","created_at","updated_at","client_id","image_file_name","image_content_type","image_file_size","image_updated_at")
+                     SELECT "id","title","description","date_presentation","created_at","updated_at","client_id","image_file_name","image_content_type","image_file_size","image_updated_at" FROM "movies"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "movies"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "description" text DEFAULT NULL, "date_presentation" date DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "image_file_name" varchar DEFAULT NULL, "image_content_type" varchar DEFAULT NULL, "image_file_size" integer(8) DEFAULT NULL, "image_updated_at" datetime DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "movies" ("id","title","description","date_presentation","created_at","updated_at","image_file_name","image_content_type","image_file_size","image_updated_at")
+                     SELECT "id","title","description","date_presentation","created_at","updated_at","image_file_name","image_content_type","image_file_size","image_updated_at" FROM "amovies"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "amovies"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200412014058"]]
+  [1m[35m (188.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rentals_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rentals_on_movie_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_rentals_on_client_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_rentals_on_client_id' AND type='index'
+[0m
+Started GET "/movies" for ::1 at 2020-04-11 20:41:57 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 227ms (Views: 214.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2020-04-11 20:41:59 -0500
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (15.2ms)
+  Rendered movies/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 48ms (Views: 32.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/movies" for ::1 at 2020-04-11 20:42:29 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IFF4O0DuV+lbPp4Rz4TbfmNT938K/2JUI0sVhTDT9ZTOxp/lEzxM9ayJ9/9TpfvSOS3V8dMugJkqGhDPYawg7Q==", "movie"=>{"title"=>"Harry Potter", "description"=>"Pelicula de Magos", "date_presentation(1i)"=>"2020", "date_presentation(2i)"=>"4", "date_presentation(3i)"=>"19", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f712c0d2c18 @tempfile=#<Tempfile:/tmp/RackMultipart20200411-30964-m2bayu.jpg>, @original_filename="The_Maze_Runner_poster.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"movie[image]\"; filename=\"The_Maze_Runner_poster.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Movie"}
+[paperclip] Trying to link /tmp/RackMultipart20200411-30964-m2bayu.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30964-whdlhr.jpg
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30964-whdlhr.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30964-10wfkox.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30964-10wfkox.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30964-whdlhr.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30964-whdlhr.jpg[0]'
+Command :: convert '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30964-whdlhr.jpg[0]' -auto-orient -resize "x600" -crop "400x600+2+0" +repage '/tmp/4b94662fe0ef187f8b12f705b02c637520200411-30964-j87c8g'
+[paperclip] Trying to link /tmp/4b94662fe0ef187f8b12f705b02c637520200411-30964-j87c8g to /tmp/5297bcc13739588a750226a10acf066b20200411-30964-9uywhj
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30964-whdlhr.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30964-12y0bi0.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-30964-12y0bi0.jpg'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (3.2ms)
+  Rendered movies/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 104ms (Views: 38.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/movies" for ::1 at 2020-04-11 20:43:54 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 182ms (Views: 171.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2020-04-11 20:43:56 -0500
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (12.1ms)
+  Rendered movies/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 49ms (Views: 31.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/movies" for ::1 at 2020-04-11 20:44:20 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NeQtrmraTVZMXS/aSg9PUJuAUyNIWhDZSGOdLBzaSy3bc8pwOQhWSrvqRjTWLm/8wf5xrZGL8hRBMphmTaWeVA==", "movie"=>{"title"=>"Harry Potter", "description"=>"Pelicula de Magos", "date_presentation(1i)"=>"2020", "date_presentation(2i)"=>"4", "date_presentation(3i)"=>"18", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f8711f6c828 @tempfile=#<Tempfile:/tmp/RackMultipart20200411-31066-23drh9.jpg>, @original_filename="The_Maze_Runner_poster.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"movie[image]\"; filename=\"The_Maze_Runner_poster.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Movie"}
+[paperclip] Trying to link /tmp/RackMultipart20200411-31066-23drh9.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-31066-1tsj9ba.jpg
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-31066-1tsj9ba.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-31066-1xg5kov.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-31066-1xg5kov.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-31066-1tsj9ba.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-31066-1tsj9ba.jpg[0]'
+Command :: convert '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-31066-1tsj9ba.jpg[0]' -auto-orient -resize "x600" -crop "400x600+2+0" +repage '/tmp/e0beb85257c5ffda4220b89b81c9297c20200411-31066-1ih60e6'
+[paperclip] Trying to link /tmp/e0beb85257c5ffda4220b89b81c9297c20200411-31066-1ih60e6 to /tmp/cf94c48d2f9cdf2c88ace449bf35125a20200411-31066-14lknhc
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+[paperclip] Trying to link /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-31066-1tsj9ba.jpg to /tmp/445bbd771bea17a20b37d33f395c5fdd20200411-31066-aspvho.jpg
+Command :: file -b --mime '/tmp/445bbd771bea17a20b37d33f395c5fdd20200411-31066-aspvho.jpg'
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "date_presentation", "created_at", "updated_at", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Harry Potter"], ["description", "Pelicula de Magos"], ["date_presentation", "2020-04-18"], ["created_at", "2020-04-12 01:44:20.375334"], ["updated_at", "2020-04-12 01:44:20.375334"], ["image_file_name", "The_Maze_Runner_poster.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 59617], ["image_updated_at", "2020-04-12 01:44:20.319151"]]
+  [1m[35m (172.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 260ms (ActiveRecord: 173.6ms)
+
+
+Started GET "/movies/1" for ::1 at 2020-04-11 20:44:20 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 29ms (Views: 23.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies" for ::1 at 2020-04-11 20:44:48 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:39:18 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (28.1ms)
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 1.9ms)
+
+
+  
+SyntaxError (/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:45: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/layouts/application.html.erb:43: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/layouts/application.html.erb:45: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2020-04-11 21:42:16 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (14.3ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/layouts/application.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/movies" for ::1 at 2020-04-11 21:47:40 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/layouts/application.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2020-04-11 21:50:12 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:39: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:41: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/layouts/application.html.erb:39: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/layouts/application.html.erb:41: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/movies" for ::1 at 2020-04-11 21:50:14 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.6ms)
+
+
+  
+SyntaxError (/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:39: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:41: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/layouts/application.html.erb:39: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/layouts/application.html.erb:41: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2020-04-11 21:50:55 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 3852ms (Views: 3849.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:51:54 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (2.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 37ms (Views: 32.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:51:57 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:52:00 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:52:22 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `current_client' for #<MoviesController:0x00007fb20420ed70>):
+    19: 
+    20:           
+    21:               <a class="navbar-brand" href="/movies"/>Todas las Peliculas</a>
+    22:               <a class="navbar-brand" href="/clients/<%=current_client.id%>/rentals"/>Peliculas que Voy a Ver</a>
+    23: 
+    24:             </div>
+    25: 
+  
+app/views/layouts/application.html.erb:22:in `_app_views_layouts_application_html_erb___1905038756404989803_70201275109460'
+Started GET "/" for ::1 at 2020-04-11 21:53:11 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+/home/ivan/trabajo/MovieRental/app/views/layouts/application.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/layouts/application.html.erb:41: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/layouts/application.html.erb:43: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2020-04-11 21:53:23 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies" for ::1 at 2020-04-11 21:53:27 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies" for ::1 at 2020-04-11 21:53:29 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies" for ::1 at 2020-04-11 21:54:11 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for ::1 at 2020-04-11 21:54:48 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 28ms (Views: 26.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients" for ::1 at 2020-04-11 21:54:50 -0500
+Processing by ClientsController#index as HTML
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  Rendered clients/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 41ms (Views: 31.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/movies" for ::1 at 2020-04-11 21:54:57 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:54:58 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:54:59 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:55:00 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/rentals" for ::1 at 2020-04-11 21:56:39 -0500
+Processing by RentalsController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:56:39 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rentals" for ::1 at 2020-04-11 21:56:57 -0500
+Processing by RentalsController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:56:57 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:57:33 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rentals" for ::1 at 2020-04-11 21:57:35 -0500
+Processing by RentalsController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:57:35 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rentals" for ::1 at 2020-04-11 21:57:37 -0500
+Processing by RentalsController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:57:37 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rentals" for ::1 at 2020-04-11 21:57:37 -0500
+Processing by RentalsController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:57:37 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rentals" for ::1 at 2020-04-11 21:57:38 -0500
+Processing by RentalsController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:57:38 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rentals" for ::1 at 2020-04-11 21:57:38 -0500
+Processing by RentalsController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:57:38 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rentals" for ::1 at 2020-04-11 21:57:39 -0500
+Processing by RentalsController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:57:39 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rentals" for ::1 at 2020-04-11 21:57:39 -0500
+Processing by RentalsController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:57:39 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rentals" for ::1 at 2020-04-11 21:57:39 -0500
+Processing by RentalsController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-11 21:57:39 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.2ms)
+
+

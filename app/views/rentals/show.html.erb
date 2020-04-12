@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @rental.client %>
+</p>
+
+<p>
+  <strong>Movie:</strong>
+  <%= @rental.movie %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @rental.status %>
+</p>
+
+<%= link_to 'Edit', edit_rental_path(@rental) %> |
+<%= link_to 'Back', rentals_path %>
